@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentation – Cyberfus</title>
-    <meta name="description" content="Quickstarts, guides, and API reference for Cyberfus.">
+    <meta name="description" content="Cyberfus – Simple, Dev-Native Security for Apps <meta name="description" content="Quickstarts, guides, and API reference for Cyberfus."> AI.">
+    <meta property="og:title" content="Cyberfus – Simple, Dev-Native Security for Apps <meta name="description" content="Quickstarts, guides, and API reference for Cyberfus."> AI">
+    <meta property="og:description" content="Cyberfus – Simple, Dev-Native Security for Apps <meta name="description" content="Quickstarts, guides, and API reference for Cyberfus."> AI.">
+    <meta property="og:image" content="https://www.cyberfus.com/og-image.png">
+    <meta property="og:url" content="https://www.cyberfus.com/pages/docs.html">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="../styles/main.css">
-    <script src="../js/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -23,6 +29,10 @@
                 <li><a href="/pages/blog.html">Blog</a></li>
             </ul>
             <div class="nav-cta">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
                 <a href="#" class="btn btn-secondary">Book a Demo</a>
                 <a href="#" class="btn btn-primary">Start Free</a>
             </div>
@@ -62,12 +72,12 @@
 
             <h2>1. Install packages</h2>
             <p>Install the Cyberfus CLI and the runtime packages via npm.</p>
-            <pre><code>npm i @cyberfus/edge @cyberfus/runtime
+            <pre><code class="language-bash">npm i @cyberfus/edge @cyberfus/runtime
 cyberfus init</code></pre>
 
             <h2>2. Configure Edge</h2>
             <p>Set up the Cyberfus middleware in your <code>middleware.ts</code> file to protect your routes.</p>
-            <pre><code>// middleware.ts
+            <pre><code class="language-typescript">// middleware.ts
 import { cyberfusEdge } from "@cyberfus/edge";
 
 export default cyberfusEdge({
@@ -77,7 +87,7 @@ export default cyberfusEdge({
 
             <h2>3. Add Runtime Protection</h2>
             <p>Wrap your API handlers with the runtime shield to inspect inputs and outputs.</p>
-            <pre><code>// api/chat.ts
+            <pre><code class="language-typescript">// api/chat.ts
 import { withRuntimeShield } from "@cyberfus/runtime";
 
 export default withRuntimeShield(async (req, res) => {
@@ -135,5 +145,11 @@ export default withRuntimeShield(async (req, res) => {
             </div>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="../js/main.js" defer></script>
 </body>
 </html>
