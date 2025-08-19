@@ -99,8 +99,8 @@ ul {
     top: 0;
     z-index: 100;
     background: var(--surface-glass);
-    backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
-    -webkit-backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
+    backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
+    -webkit-backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
     border-bottom: var(--glass-border);
 }
 
@@ -132,6 +132,38 @@ ul {
 
 .nav-links a:hover {
     color: var(--text-high);
+}
+
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-800);
+    border: 1px solid var(--stroke-inner);
+    border-radius: var(--radius-card);
+    padding: 8px;
+    min-width: 200px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.dropdown-menu a:hover {
+    background: var(--accent-cyan);
+    color: var(--bg-900);
 }
 
 .nav-cta {
@@ -322,8 +354,8 @@ ul {
     padding: 24px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.35);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
-    -webkit-backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
+    backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
+    -webkit-backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
 }
 
 .feature-card:hover, .product-card:hover {
@@ -360,8 +392,8 @@ ul {
     padding: 24px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.35);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
-    -webkit-backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
+    backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
+    -webkit-backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
 }
 
 .product-card h3 {
@@ -546,8 +578,8 @@ ul {
     border-radius: var(--radius-overlay);
     text-align: center;
     margin: 72px 0;
-    backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
-    -webkit-backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
+    backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
+    -webkit-backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
 }
 
 .cta-banner-section h2 {
