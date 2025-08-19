@@ -1,0 +1,95 @@
+.dashboard-body {
+    display: flex;
+    background-color: var(--bg-900);
+}
+
+.dashboard-sidebar {
+    width: 240px;
+    background: var(--surface-glass);
+    border-right: 1px solid var(--glass-border);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    backdrop-filter: blur(24px) saturate(180%);
+}
+
+.dashboard-sidebar .logo {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--text-high);
+    margin-bottom: 40px;
+}
+
+.dashboard-sidebar nav {
+    flex-grow: 1;
+}
+
+.dashboard-sidebar nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dashboard-sidebar nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: var(--radius-card);
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.dashboard-sidebar nav a:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--text-high);
+}
+
+.dashboard-sidebar nav .active a {
+    background: var(--accent-cyan);
+    color: var(--bg-900);
+}
+
+.dashboard-main {
+    flex-grow: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.dashboard-header h1 {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.dashboard-card {
+    background: var(--surface-glass);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-overlay);
+    padding: 24px;
+    backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
+    -webkit-backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
+}
+
+.dashboard-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.dashboard-card h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.dashboard-card .stat {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    color: var(--accent-cyan);
+}
