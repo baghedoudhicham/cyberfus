@@ -32,8 +32,8 @@
     bottom: 0;
     background: inherit;
     border-radius: inherit;
-    backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
-    -webkit-backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
+    backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
+    -webkit-backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
     z-index: -1;
 }
 
