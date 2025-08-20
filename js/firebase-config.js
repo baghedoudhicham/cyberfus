@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getAuth, connectAuthEmulator } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+import { getFirestore, connectFirestoreEmulator } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBcr3cXQhlpqJcYISLd-VvUkGzeUgsod2w",
@@ -13,9 +14,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 // Use the local emulator if running, otherwise connect to the real service
-// The host and port must match what you configure in firebase.json
 connectAuthEmulator(auth, "http://localhost:9099");
+connectFirestoreEmulator(db, 'localhost', 8080);
 
-export { app, auth };
+export { app, auth, db };
