@@ -1,0 +1,214 @@
+:root {
+    --bg-900: #0A0D12;
+    --bg-800: #0F131A;
+    --surface-glass: rgba(255, 255, 255, 0.04);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+
+    --accent-cyan: #30E7FF;
+    --accent-lime: #C5FF3A;
+    --accent-amber: #FFB020;
+    --accent-danger: #FF5C5C;
+    --ok: #3DDC97;
+
+
+    --text-high: #EAF2FF;
+    --text-muted: #A8B2C2;
+    --text-subtle: #6B768A;
+    --text-lo: #8EA0B7;
+
+    --stroke-inner: #1B2430;
+    --stroke-outer: rgba(255, 255, 255, 0.08);
+
+    --font-body: 'Inter', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+    --font-heading: 'Söhne', 'Geist', 'Neue Haas Unica', sans-serif;
+
+    --radius-card: 12px;
+    --radius-overlay: 16px;
+    --radius-pill: 999px;
+
+    --lh-display: 1.2;
+    --lh-body: 1.55;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-900);
+  color: var(--text-high);
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: var(--glass-border);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--text-high);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-high);
+}
+
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg-800);
+    border: 1px solid var(--stroke-inner);
+    border-radius: var(--radius-card);
+    padding: 8px;
+    min-width: 200px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.dropdown-menu a:hover {
+    background: var(--accent-cyan);
+    color: var(--bg-900);
+}
+
+.nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: var(--radius-pill);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(120deg, var(--accent-cyan) 0%, var(--accent-lime) 100%);
+    color: var(--bg-900);
+    border-color: var(--accent-cyan);
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-muted);
+    border-color: var(--stroke-inner);
+}
+
+.btn-secondary:hover {
+    color: var(--text-high);
+    border-color: var(--stroke-outer);
+}
+
+.main-footer {
+    background-color: var(--bg-800);
+    padding: 72px 40px 24px;
+    border-top: 1px solid var(--stroke-inner);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-w: 1400px;
+    margin: 0 auto 56px;
+}
+
+.footer-heading {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-high);
+    margin-bottom: 16px;
+}
+
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-column a {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--text-high);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-w: 1400px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--stroke-inner);
+    color: var(--text-subtle);
+    font-size: 14px;
+}

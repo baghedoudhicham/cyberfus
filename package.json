@@ -1,0 +1,21 @@
+{
+  "name": "cyberfus",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "firebase": "^9.23.0",
+    "next": "13.5.6",
+    "prismjs": "^1.30.0",
+    "react": "18.2.0",
+    "react-awesome-reveal": "^4.3.1",
+    "react-dom": "18.2.0",
+    "react-globe.gl": "^2.35.0",
+    "three": "^0.179.1"
+  }
+}

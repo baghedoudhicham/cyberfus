@@ -1,4 +1,4 @@
-.login-body {
+.loginContainer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,13 +6,7 @@
     background-image: linear-gradient(120deg, var(--bg-900) 0%, #1a202c 100%);
 }
 
-.login-container {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-}
-
-.login-box {
+.loginBox {
     background: var(--surface-glass);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-overlay);
@@ -20,10 +14,11 @@
     text-align: center;
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 400px;
 }
 
-/* Apply the liquid glass effect */
-.login-box::before {
+.loginBox::before {
     content: '';
     position: absolute;
     top: 0;
@@ -32,16 +27,16 @@
     bottom: 0;
     background: inherit;
     border-radius: inherit;
-    backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
-    -webkit-backdrop-filter: blur(16px) url('../assets/displacement-map.svg#liquid-glass');
+    backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
+    -webkit-backdrop-filter: blur(16px) url('/assets/displacement-map.svg#liquid-glass');
     z-index: -1;
 }
 
-.login-box .logo {
+.loginBox .logo {
     margin-bottom: 24px;
 }
 
-.login-box h2 {
+.loginBox h2 {
     font-family: var(--font-heading);
     font-size: 24px;
     margin-bottom: 24px;
@@ -72,7 +67,7 @@
     border-color: var(--accent-cyan);
 }
 
-.login-box .btn {
+.loginBox .btn {
     width: 100%;
     padding: 12px;
 }
