@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import ThemeToggleButton from './ThemeToggleButton'
 
 export default function Layout({ children }) {
   return (
@@ -26,6 +27,7 @@ export default function Layout({ children }) {
             <li><Link href="/docs">Docs</Link></li>
           </ul>
           <div className="nav-cta">
+            <ThemeToggleButton />
             <Link href="/login" legacyBehavior><a className="btn btn-secondary">Sign In</a></Link>
             <Link href="/login" legacyBehavior><a className="btn btn-primary">Start Free</a></Link>
           </div>

@@ -1,7 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --bg-900: #0A0D12;
     --bg-800: #0F131A;
-    --surface-glass: rgba(255, 255, 255, 0.04);
+    --surface-glass: rgba(15, 19, 26, 0.8);
     --glass-border: 1px solid rgba(255, 255, 255, 0.08);
 
     --accent-cyan: #30E7FF;
@@ -31,6 +35,28 @@
     --lh-body: 1.55;
 }
 
+:root.light {
+    --bg-900: #ffffff;
+    --bg-800: #f1f5f9;
+    --surface-glass: rgba(255, 255, 255, 0.8);
+    --glass-border: 1px solid rgba(0, 0, 0, 0.08);
+
+    --accent-cyan: #00A3B5;
+    --accent-lime: #728b23;
+    --accent-amber: #d97706;
+    --accent-danger: #dc2626;
+    --ok: #16a34a;
+
+    --text-high: #020617;
+    --text-muted: #334155;
+    --text-subtle: #64748b;
+    --text-lo: #94a3b8;
+
+    --stroke-inner: #e2e8f0;
+    --stroke-outer: rgba(0, 0, 0, 0.08);
+}
+
+
 html,
 body {
   padding: 0;
@@ -38,6 +64,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--bg-900);
   color: var(--text-high);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -63,6 +90,7 @@ ul {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: var(--glass-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .main-nav {
@@ -86,11 +114,14 @@ ul {
     gap: 32px;
 }
 
+.nav-links .nav-item,
 .nav-links a {
     color: var(--text-muted);
     transition: color 0.3s ease;
+    cursor: pointer;
 }
 
+.nav-links .nav-item:hover,
 .nav-links a:hover {
     color: var(--text-high);
 }
@@ -113,7 +144,7 @@ ul {
     border-radius: var(--radius-card);
     padding: 8px;
     min-width: 200px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 .dropdown-menu a {
@@ -168,6 +199,7 @@ ul {
     background-color: var(--bg-800);
     padding: 72px 40px 24px;
     border-top: 1px solid var(--stroke-inner);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .footer-grid {
@@ -211,4 +243,22 @@ ul {
     border-top: 1px solid var(--stroke-inner);
     color: var(--text-subtle);
     font-size: 14px;
+}
+
+/* Masonry Grid Styles */
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 30px;
 }

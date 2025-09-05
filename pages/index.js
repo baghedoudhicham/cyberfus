@@ -1,13 +1,19 @@
-import Head from 'next/head'
-import Layout from '../components/Layout'
-import styles from '../styles/Home.module.css'
-import dynamic from 'next/dynamic'
-import { Fade } from "react-awesome-reveal";
+import Head from 'next/head';
+import Layout from '../components/Layout';
+import dynamic from 'next/dynamic';
+
+import ProductCards from '../components/ProductCards';
+import TrustRibbon from '../components/TrustRibbon';
+import UseCases from '../components/UseCases';
+import StatsBar from '../components/StatsBar';
+import Testimonials from '../components/Testimonials';
+import FAQ from '../components/FAQ';
+import CTA from '../components/CTA';
 
 // Dynamically import the ThreatGraph component with SSR disabled
 const ThreatGraph = dynamic(() => import('../components/ThreatGraph'), {
   ssr: false,
-  loading: () => <p className="text-center text-gray-400">Loading Console...</p>
+  loading: () => <p className="text-center text-gray-400 dark:text-gray-600">Loading Console...</p>
 });
 
 export default function Home() {
@@ -25,48 +31,37 @@ export default function Home() {
       </Head>
 
       <main>
-        <section className="hero-section">
-            <div className="hero-content">
-                <h1>Security that keeps up with your code.</h1>
-                <p className="subtitle">Protect apps, APIs, and AI models with dev-friendly controls at the edge and runtime.</p>
-                <div className="hero-cta">
-                    <a href="/login" className="btn btn-primary">Start Free</a>
-                    <a href="mailto:demo@cyberfus.com" className="btn btn-secondary">Book a Demo</a>
-                </div>
-                <div className="hero-microlabels">
-                    <span>5-minute install</span>
-                    <span>Least-privilege by default</span>
-                    <span>Works with Next.js, FastAPI, Rails, Vercel, K8s</span>
-                </div>
+        {/* Hero Section */}
+        <section className="hero-section text-center py-20 md:py-32 bg-gray-900 dark:bg-white">
+          <div className="container mx-auto px-6">
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-100 dark:text-gray-900">Security that keeps up with your code.</h1>
+            <p className="text-lg md:text-xl text-gray-400 dark:text-gray-600 mt-4 max-w-3xl mx-auto">Protect apps, APIs, and AI models with dev-friendly controls at the edge and runtime.</p>
+            <div className="mt-8 flex justify-center gap-4">
+                <a href="/login" className="btn btn-primary text-lg px-8 py-3">Start Free</a>
+                <a href="mailto:demo@cyberfus.com" className="btn btn-secondary text-lg px-8 py-3">Book a Demo</a>
             </div>
+          </div>
         </section>
 
-        <section className="bg-gray-900 text-white py-16 md:py-24">
+        {/* Threat Graph Section */}
+        <section className="bg-gray-900 dark:bg-white py-16 md:py-24">
             <div className="container mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Live Threat Intelligence</h2>
-                <p className="text-gray-400 mb-8 max-w-2xl mx-auto">Our global network detects and blocks threats in real-time. See it in action.</p>
-                <div className="flex justify-center items-center h-[600px] w-full">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-100 dark:text-gray-900">Live Threat Intelligence</h2>
+                <p className="text-gray-400 dark:text-gray-600 mb-8 max-w-2xl mx-auto">Our global network detects and blocks threats in real-time. See it in action.</p>
+                <div className="flex justify-center items-center h-[400px] md:h-[600px] w-full">
                     <ThreatGraph />
                 </div>
             </div>
         </section>
 
-        <Fade triggerOnce cascade damping={0.1}>
-          <section className="feature-rail-section">
-              <div className="feature-card">
-                  <h3>Runtime Shield</h3>
-                  <p>Stop SSRF, RCE, path traversal, and OWASP-AI risks in real time.</p>
-              </div>
-              <div className="feature-card">
-                  <h3>AI Model Gate</h3>
-                  <p>Filter prompts, sanitize outputs, add PII and policy guardrails.</p>
-              </div>
-              <div className="feature-card">
-                  <h3>Secret Mesh</h3>
-                  <p>Rotate, scope, and inject secrets per-env & per-request.</p>
-              </div>
-          </section>
-        </Fade>
+        <TrustRibbon />
+        <ProductCards />
+        <UseCases />
+        <StatsBar />
+        <Testimonials />
+        <FAQ />
+        <CTA />
+
       </main>
     </Layout>
   )

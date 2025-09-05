@@ -1,12 +1,15 @@
 import '../styles/globals.css';
-import 'prismjs/themes/prism-okaidia.css'; // Import Prism theme
+import 'prismjs/themes/prism-okaidia.css';
 import { AuthProvider } from '../context/AuthContext';
+import { ThemeProvider } from 'next-themes';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <AuthProvider>
-      <Component {...pageProps} />
-    </AuthProvider>
+    <ThemeProvider attribute="class">
+      <AuthProvider>
+        <Component {...pageProps} />
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

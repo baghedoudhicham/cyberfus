@@ -7,7 +7,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["feat/create-cyberfus-website"]
+    branches: ["main", "feat/create-cyberfus-website"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -28,6 +28,13 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
+      NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}
+      NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_PROJECT_ID }}
+      NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: ${{ secrets.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET }}
+      NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}
+      NEXT_PUBLIC_FIREBASE_APP_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -69,10 +76,13 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Check Environment Variables 🕵️
         run: |
-          echo "NEXT_PUBLIC_FIREBASE_API_KEY: $NEXT_PUBLIC_FIREBASE_API_KEY"
-          echo "NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: $NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN"
-          echo "NEXT_PUBLIC_FIREBASE_PROJECT_ID: $NEXT_PUBLIC_FIREBASE_PROJECT_ID"
-          # Add other relevant variables as needed
+          echo "Checking for environment variables..."
+          if [ -z "$NEXT_PUBLIC_FIREBASE_API_KEY" ]; then echo "❌ NEXT_PUBLIC_FIREBASE_API_KEY is NOT set"; else echo "✅ NEXT_PUBLIC_FIREBASE_API_KEY is set"; fi
+          if [ -z "$NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN" ]; then echo "❌ NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN is NOT set"; else echo "✅ NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN is set"; fi
+          if [ -z "$NEXT_PUBLIC_FIREBASE_PROJECT_ID" ]; then echo "❌ NEXT_PUBLIC_FIREBASE_PROJECT_ID is NOT set"; else echo "✅ NEXT_PUBLIC_FIREBASE_PROJECT_ID is set"; fi
+          if [ -z "$NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET" ]; then echo "❌ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET is NOT set"; else echo "✅ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET is set"; fi
+          if [ -z "$NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID" ]; then echo "❌ NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID is NOT set"; else echo "✅ NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID is set"; fi
+          if [ -z "$NEXT_PUBLIC_FIREBASE_APP_ID" ]; then echo "❌ NEXT_PUBLIC_FIREBASE_APP_ID is NOT set"; else echo "✅ NEXT_PUBLIC_FIREBASE_APP_ID is set"; fi
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
