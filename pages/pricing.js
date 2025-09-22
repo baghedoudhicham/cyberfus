@@ -10,7 +10,7 @@ export default function Pricing() {
       <main>
         <section className="pricing-section">
             <h1>Simple, honest pricing</h1>
-            <p className="subtitle">Choose the plan that's right for your team.</p>
+            <p className="subtitle">Choose the plan that&apos;s right for your team.</p>
             <div className="pricing-grid">
                 <div className="pricing-card">
                     <h3>Starter</h3>
