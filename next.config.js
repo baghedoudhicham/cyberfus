@@ -5,7 +5,7 @@ const nextConfig = {
 
   // Image optimization can be re-enabled for Firebase Hosting
   images: {
-    unoptimized: true,
+    unoptimized: false,
     domains: ['i.pravatar.cc', 'www.svgrepo.com'],
   },
 };
