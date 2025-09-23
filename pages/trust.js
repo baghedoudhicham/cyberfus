@@ -20,7 +20,7 @@ const TrustPage = () => {
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Trust & Security</h1>
             <p className="text-gray-400 dark:text-gray-600 text-lg">
-              At Cyberfus, we are deeply committed to the security of our platform and the privacy of our customers' data.
+              At Cyberfus, we are deeply committed to the security of our platform and the privacy of our customers&apos; data.
             </p>
           </div>
 

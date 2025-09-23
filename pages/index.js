@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Layout from '../components/Layout';
 import dynamic from 'next/dynamic';
 
@@ -37,7 +38,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-100 dark:text-gray-900">Security that keeps up with your code.</h1>
             <p className="text-lg md:text-xl text-gray-400 dark:text-gray-600 mt-4 max-w-3xl mx-auto">Protect apps, APIs, and AI models with dev-friendly controls at the edge and runtime.</p>
             <div className="mt-8 flex justify-center gap-4">
-                <a href="/login" className="btn btn-primary text-lg px-8 py-3">Start Free</a>
+                <Link href="/login" className="btn btn-primary text-lg px-8 py-3">Start Free</Link>
                 <a href="mailto:demo@cyberfus.com" className="btn btn-secondary text-lg px-8 py-3">Book a Demo</a>
             </div>
           </div>

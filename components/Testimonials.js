@@ -11,6 +11,8 @@ const testimonials = [
   },
 ];
 
+import Image from 'next/image';
+
 const Testimonials = () => {
   return (
     <section className="py-16 md:py-24 bg-gray-800 dark:bg-gray-100">
@@ -21,9 +23,9 @@ const Testimonials = () => {
         <div className="grid md:grid-cols-2 gap-8 mt-12 max-w-5xl mx-auto">
           {testimonials.map((testimonial) => (
             <div key={testimonial.author} className="bg-gray-900 dark:bg-white p-8 rounded-lg">
-              <p className="text-gray-300 dark:text-gray-700 text-lg italic mb-6">"{testimonial.quote}"</p>
+              <p className="text-gray-300 dark:text-gray-700 text-lg italic mb-6">&quot;{testimonial.quote}&quot;</p>
               <div className="flex items-center">
-                <img src={testimonial.avatar} alt={testimonial.author} className="w-12 h-12 rounded-full mr-4" />
+                <Image src={testimonial.avatar} alt={testimonial.author} width={48} height={48} className="w-12 h-12 rounded-full mr-4" />
                 <div>
                   <p className="font-bold text-gray-100 dark:text-gray-900">{testimonial.author.split(',')[0]}</p>
                   <p className="text-gray-400 dark:text-gray-600">{testimonial.author.split(',')[1]}</p>
