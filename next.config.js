@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  output: 'export',
   reactStrictMode: true,
 
   // Image optimization can be re-enabled for Firebase Hosting
   images: {
-    unoptimized: false,
+    unoptimized: true,
     domains: ['i.pravatar.cc', 'www.svgrepo.com'],
   },
 };
